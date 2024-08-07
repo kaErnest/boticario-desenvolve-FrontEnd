@@ -1,0 +1,145 @@
+:root {
+    --color-primary: #F8D38A;
+    --color-secondary: #81B3C8;
+    --color-terciary: #E78895; 
+    --color-black: #000;
+    --color-white: #fff;
+    --button-linear: linear-gradient(120deg, #F8D38A, #81B3C8, #E78895);
+
+
+}
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav_logo {
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+.btn-default {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-black);
+    box-shadow: 4px 4px 0 var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    padding: .75rem 1rem;
+    max-width: 14rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    
+}
+
+.btn-default:hover {
+    background: var(--button-linear);
+}
+
+header {
+    width: 100%;
+    padding: 28px 8%;
+    position: sticky;
+    top: 0;
+    background-color: #fff9ea;
+    z-index: 3;
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .formulario {
+        width: 90%;
+        margin-left: 5%;
+        height: auto; 
+        flex-direction: column; 
+    }
+
+    .form-image {
+        width: 100%;
+        height: auto; 
+    }
+
+    .form-image img {
+        width: 50%; 
+        height: auto; 
+    }
+
+    .form {
+        width: 100%;
+        height: auto; 
+        padding: 2rem 1rem;
+    }
+
+    .formulario__titulo-texto {
+        font-size: 22px;
+    }
+
+    .formulario__botao {
+        padding: 0.8em 3em;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-image img {
+        width: 20rem;
+    }
+
+    .form {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .campo__escrita--menor {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-image img {
+        width: 15rem;
+    }
+
+    .form {
+        padding: 1rem;
+    }
+
+    .formulario__titulo-texto {
+        font-size: 20px;
+    }
+
+    .formulario__botao {
+        padding: 0.6em 2em;
+        font-size: 14px;
+    }
+    nav#navbar {
+        flex-direction: column;
+    }
+    nav .btn-default {
+        padding: 0.5em 2em;
+        font-size: 14px;
+        margin-top: 1em;
+    }
+    nav#navbar #nav_logo {
+        font-size: 1.5rem; 
+
+    }
+}

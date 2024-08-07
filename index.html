@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <title>SolAmigo</title>
+
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/kits copy.css">
+        <link rel="stylesheet" href="carrossel.css">
+        <link rel="stylesheet" href="./style/carousel1.css">
+        <link rel="stylesheet" href="./style/sacola.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </head> 
+    <body>
+        <header>
+            <nav id="navbar">
+                <i class="fa-regular fa-sun" id="nav_logo"> Solamigo</i>
+                <ul id="nav_list">
+                    <li class="nav-item active">
+                        <a href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#kits">Kits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#promo">Promoções</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testimonials">Avaliações</a>
+                    </li>
+                </ul>
+        
+                <div id="cart-modal" class="cart-modal">
+                    <div class="cart-content">
+                        <span class="close" id="close-cart">&times;</span>
+                        <h2>Meu Carrinho</h2><br>
+                        <ul id="cart-items">
+                        </ul><br>
+                        <div id="cart-total">
+                            <h3>Total: R$<span id="total-price">0.00</span></h3>
+                        </div><br>
+                        <div id="cart-error" class="cart-error"></div>
+                        <button class="btn-default" id="checkout-button">Finalizar Compra</button>
+                    </div>
+                </div>
+            <div class="botesh">
+                <button id="cart-button" class="btn-default">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span id="cart-count">0</span>
+                </button>
+        
+                <button class="btn-default" onclick="location.href='login.html'">
+                    Minha Conta
+                </button>
+            </div>    
+                <button id="mobile_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        
+            <div id="mobile_menu">
+                <ul id="mobile_nav_list">
+                    <li class="nav-item">
+                        <a href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#kit">Kits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testimonials">Avaliações</a>
+                    </li>
+                </ul>
+        
+                <div id="mobile-cart-modal" class="cart-modal">
+                    <div class="cart-content">
+                        <span class="close" id="close-mobile-cart">&times;</span>
+                        <h2>Meu Carrinho</h2><br>
+                        <ul id="mobile-cart-items">
+                        </ul><br>
+                        <div id="mobile-cart-total">
+                            <h3>Total: R$<span id="mobile-total-price">0.00</span></h3>
+                        </div><br>
+                        <button class="btn-default" id="mobile-checkout-button">Finalizar Compra</button>
+                    </div>
+                </div>
+        
+                <button id="mobile-cart-button" class="btn-default">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span id="mobile-cart-count">0</span>
+                </button><br>
+        
+                <button class="btn-default" onclick="location.href='login.html'">
+                    Minha Conta
+                </button>
+            </div>
+        </header>
+        
+        
+        <main id="content">
+            <section id="home">
+                <div class="shape"></div>
+                <div id="cta">
+                    <h1 class="title">
+                        Descubra o 
+                        <span>Solamigo!</span>
+                    </h1>
+
+                    <p class="description">
+                        Cuidado Radiante para você e seu Pet.
+                    </p>
+                    <p>Proteja-se dos raios solares e cuide do seu pet com a nova linha de proteção solar da Solamigo. Feita com carinho para quem ama caminhar com seu melhor amigo!<br> <br>  
+                        Uma fórmula suave que garante não apenas a sua segurança, mas também a alegria do seu companheiro de quatro patas.</p>
+
+                    <div id="cta_buttons">
+                        <a href="#" class="btn-default">
+                            Saiba Mais
+                        </a>
+
+                        <a href="tel:+55555555555" id="phone_button">
+                            <button class="btn-default">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                            Compre pelo Whatsapp
+                        </a>
+                    </div>
+
+                        <div class="social-media-buttons">
+                            <a href="">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+        
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+        
+                            <a href="">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+
+                    </div>
+                </div>
+
+                <div id="banner">
+                    <img src="img/header.svg" alt="">
+                </div>
+            </section>
+
+            <section>
+                <div class="wrapper">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="carousel">
+                        <img src="./img/OIG1.qHSYvZ7FZm8cgato.jpeg" atl="img" draggable="false">
+                        <img src="img/OIG3.ysgi6fbyspCZBYwgh.jpg"   atl="img" draggable="false">
+                        <img src="img/OIG2gato.jpeg"                atl="img" draggable="false">
+                        <img src="img/OIG2.WGBWBzAP.jpg"            atl="img" draggable="false">
+                        <img src="img/OIG3gato.jpeg"                atl="img" draggable="false">
+                        <img src="img/OIG1ca.jpeg"                  atl="img" draggable="false">
+                    </div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
+            </section>
+
+            <section id="produtos">
+                <h2 class="section-title">Confira nossos últimos lançamentos</h2>
+                <h3 class="section-subtitle">Nossos produtos especiais esperam por você!</h3>
+    
+                <div id="product-container">
+                    <div class="product">
+                        <div class="product-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <img src="img/th.jpeg" class="product-image" alt=" "width="256" height="256">
+
+                        <h3 class="product-title">
+                            Protetor Solar Pelos Pet
+                        </h3>
+    
+                        <span class="product-description">
+                            Especialmente formulado para pets, este protetor solar oferece proteção eficaz contra os raios UVA e UVB
+                        </span>
+
+                        <div class="product-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="product-price">
+                            <h4>R$48,00</h4>
+                            <button class="btn-default add-to-cart" data-name="Protetor Solar Pelos Pet" data-price="48.00">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (13).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Protetor Solar Facial Tutor
+                            </h3>
+        
+                            <span class="product-description">
+                                Máxima proteção para a sua pele enquanto aproveita o dia com seu amigo.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$42,90</h4>
+                                <button class="btn-default add-to-cart" data-name="Protetor Solar Facial Tutor" data-price="42,90">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (10).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Limpa Patas Pet
+                            </h3>
+        
+                            <span class="product-description">
+                                Gel de limpeza para manter as patas do seu pet limpas e saudáveis após um passeio.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$23,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Limpa Patas Pet" data-price="23.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (7).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Protetor Solar Patas Pet
+                            </h3>
+        
+                            <span class="product-description">
+                                Mantém as patinhas do seu pet hidratadas e seguras do calor e superfícies ásperas.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$36,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Protetor Solar Patas Pet" data-price="36.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+
+                    </div>
+                
+                    <div class="product">
+                        <div class="product-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <img src="img/th (12).jpeg" class="product-image" alt=" "width="256" height="256">
+
+                        <h3 class="product-title">
+                            Protetor Solar Spray Pet
+                        </h3>
+    
+                        <span class="product-description">
+                            Fácil de aplicar, ideal para pets ativos que adoram correr e brincar.
+                        </span>
+
+                        <div class="product-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="product-price">
+                            <h4>R$52,00</h4>
+                            <button class="btn-default add-to-cart" data-name="Protetor Solar Spray Pet" data-price="52.00">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (5).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Protetor Solar Corporal Spray Tutor
+                            </h3>
+        
+                            <span class="product-description">
+                                Cobertura ampla e duradoura, perfeita para atividades ao ar livre.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$50,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Protetor Solar Corporal Spray Tutor" data-price="50.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (9).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Protetor Solar Focinho Pet
+                            </h3>
+        
+                            <span class="product-description">
+                                Especialmente formulado para proteger o focinho sensível do seu pet.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$43,90</h4>
+                                <button class="btn-default add-to-cart" data-name="Protetor Solar Focinho Pet" data-price="43,90">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (6).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Repelente Spray Pet e Tutor
+                            </h3>
+        
+                            <span class="product-description">
+                                Protege contra picadas de insetos durante os passeios e aventuras na natureza.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$25,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Repelente Spray Pet e Tutor" data-price="25.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <img src="img/th (1).jpeg" class="product-image" alt=" "width="256" height="256">
+
+                        <h3 class="product-title">
+                            Protetor Solar Corporal Tutor
+                        </h3>
+    
+                        <span class="product-description">
+                            Cobertura ampla e duradoura, perfeita para atividades ao ar livre.
+                        </span>
+
+                        <div class="product-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="product-price">
+                            <h4>R$50,00</h4>
+                            <button class="btn-default add-to-cart" data-name="Protetor Solar Corporal Tutor" data-price="50.00">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (8).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Hidratante Pós-Sol Tutor
+                            </h3>
+        
+                            <span class="product-description">
+                                Hidrata e repara a pele após a exposição solar.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$48,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Hidratante Pós-Sol Tutor" data-price="48.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (11).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Hidratante Pós-Sol Focinho, Patas e Orelhas Pet
+                            </h3>
+        
+                            <span class="product-description">
+                                Protege as áreas mais sensíveis do seu pet.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$45,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Hidratante Pós-Sol Focinho, Patas e Orelhas Pet" data-price="45.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/th (2).jpeg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Hidratante Pós-Sol Pelos Pet
+                            </h3>
+        
+                            <span class="product-description">
+                                Repara e hidrata os pelos e a pele do seu pet, evitando o ressecamento causado pela exposição ao sol.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$33,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Hidratante Pós-Sol Pelos Pet" data-price="33.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+                <div id="pagination">
+                    <button id="prev-btn">Anterior</button>
+                    <span id="page-num">Página 1</span>
+                    <button id="next-btn">Próximo</button>
+                </div>
+            </section> 
+
+            <section id="kits">
+                <h2 class="section-title">Confira nossos kits especiais</h2>
+                <h3 class="section-subtitle">Compre mais, pague menos!</h3>
+    
+                <div id="products">
+                    <div class="product">
+                        <div class="product-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <img src="img/OIG2 (1).jpg" class="product-image" alt=" "width="256" height="256">
+
+                        <h3 class="product-title">
+                            Kit Raios de Hidratação
+                        </h3>
+    
+                        <span class="product-description">
+                            Contém: 1 Protetor Solar para Pelos do Pet: Cuida e protege a pele sensível do seu pet contra os raios UV.
+                          <br>1 Protetor Solar para o Tutor: Máxima proteção para a sua pele enquanto aproveita o dia com seu amigo.
+                         <br>1 Limpeza da Pata: Gel de limpeza para manter as patas do seu pet limpas e saudáveis após um passeio.
+                        </span>
+
+                        <div class="product-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="product-price">
+                            <h4>R$20,00</h4>
+                            <button class="btn-default add-to-cart" data-name="Kit Raios de Hidratação" data-price="20.00">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/OIG2.jpg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Kit Aventura ao Ar Livre
+                            </h3>
+        
+                            <span class="product-description">
+                                Contém: 1 Protetor de Patas: Mantém as patinhas do seu pet hidratadas e seguras do calor e superfícies ásperas.
+                                <br> 1 Protetor Solar em Spray para Pet: Fácil de aplicar, ideal para pets ativos que adoram correr e brincar.
+                                <br> 1 Protetor Solar Corporal em Spray para o Tutor: Cobertura ampla e duradoura, perfeita para atividades ao ar livre.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$20,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Kit Aventura ao Ar Livre" data-price="20.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/OIG3 (6).jpg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Kit Focinho Feliz
+                            </h3>
+        
+                            <span class="product-description">
+                                Contém: 1 Protetor Solar para o Focinho do Pet: Especialmente formulado para proteger o focinho sensível do seu pet. <br> 1 Repelente em Spray de Insetos para Pet e Tutor: Protege contra picadas de insetos durante os passeios e aventuras na natureza. <br> 1 Protetor Solar Corporal para o Tutor: Cobertura ampla e duradoura, perfeita para atividades ao ar livre.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$20,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Kit Kit Focinho Feliz" data-price="20.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="product">
+                            <div class="product-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+        
+                            <img src="img/OIG3.aJaUn.jpg" class="product-image" alt="" width="256" height="256">
+        
+                            <h3 class="product-title">
+                                Kit Exploradores do Sol
+                            </h3>
+        
+                            <span class="product-description">
+                                Contém: 1 Hidratante Pós-Sol para o Tutor: Hidrata e repara a pele após a exposição solar. <br> 1 Hidratante Pós-Sol para Focinho, Patas e Orelhas do Pet: Protege as áreas mais sensíveis do seu pet. <br> 1 Hidratante Pós-Sol para Pelos do Pet: Repara e hidrata os pelos e a pele do seu pet, evitando o ressecamento causado pela exposição ao sol.
+                            </span>
+        
+                            <div class="product-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(500+)</span>
+                            </div>
+        
+                            <div class="product-price">
+                                <h4>R$20,00</h4>
+                                <button class="btn-default add-to-cart" data-name="Kit Exploradores do Sol" data-price="20.00">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                                </button>
+                            </div>
+
+                    </div>
+                </div>
+            </section> 
+            <div id="carros"> 
+                <h2 class="section-title">Ofertas Especiais!</h2>
+                <h3 class="section-subtitle">Compre o Kit Completo e Ganhe Desconto!</h3>
+            </div>
+            <section id="promo" class="containerproje"> 
+
+                <div class="slide-container active">
+                    <div class="slide">
+                     <div class="contentproje">
+                       <h3>kit Dupla Solar</h3>
+                       <p>Protetor Solar em Spray para Pelos do Pet + Protetor Solar Facial para o Tutor + Limpeza de Patas
+
+                        <br><br>Oferta Especial: Compre 1 Kit e Ganhe 10% de Desconto no Segundo!</p>
+                       <a href="" class="bntproj">Saiba mais</a>
+                     </div>
+                    </div>
+                </div>
+        
+                <div class="slide-container">
+                    <div class="slide">
+                     <div class="contentproje">
+                       <h3>kit Aventura Solar</h3>
+                       <p >Protetor Solar para o Focinho do Pet + Protetor Solar Corporal para o Tutor + Protetor para as Patas do Pet.
+
+                        <br><br>Oferta Especial: Compre 2 Kits e Ganhe o Terceiro com 50% de Desconto!</p>
+                       <a href="" class="bntproj">Saiba mais</a>
+                     </div>
+                    </div>
+                </div>
+                
+                <div class="slide-container">
+                    <div class="slide">
+                     <div class="contentproje">
+                       <h3>kit Sol e Natureza</h3>
+                       <p>Hidratante Pós-SOl para Focinho e Orelhas do Pet + Hidratante em Spray Pós-Sol para o Tutor + Repelente em Spray de Insetos para Pet e Tutor.
+
+                        <br><br>Oferta Especial: Leve o Kit 3 e Ganhe um Hidratante Pós-Sol para Pelos do Pet Grátis!</p>
+                       <a href="" class="bntproj">Saiba mais</a>
+                     </div>
+                    </div>
+                </div>
+        
+                
+                <div id="prev" onclick="prev()"> < </div>
+                <div id="next" onclick="next()"> > </div>
+            </section>
+
+            <div>
+            <section id="testimonials">
+                <img src="img/depoim.svg" id="testimonial_f01" alt="">
+    
+                <div id="testimonials_content">
+                    <h2 class="section-title">
+                        Depoimentos
+                    </h2>
+                    <h3 class="section-subtitle">
+                        O que os clientes falam sobre nós
+                    </h3>
+    
+                    <div id="feedbacks">
+                        <div class="feedback">
+                            <img src="img/2.svg" class="feedback-avatar" alt="">
+    
+                            <div class="feedback-content">
+                                <p>
+                                    Pedro Carvalho
+                                    <span>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </p>
+                                <p>
+                                    "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                    Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="feedback">
+                            <img src="img/1.svg" class="feedback-avatar" alt="">
+    
+                            <div class="feedback-content">
+                                <p>
+                                    Bruna Corsi
+                                    <span>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </p>
+                                <p>
+                                    "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                    Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <button class="btn-default">
+                        Ver mais avaliações
+                    </button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <img src="img/wave.svg" alt="">
+    
+            <div id="footer_items">
+                <div class="colun-1">
+                    <i class="fa-regular fa-sun" id="nav_logo-footer">  Solamigo</i>
+
+                        <div class="social-media-buttons">
+                            <a href="">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+            
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+            
+                            <a href="">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <nav>
+                        <ul id="nav_list-footer">
+                            <li class="nav-item active">
+                                <a href="#home">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#promo">Promoções</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#kits">Kits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#testimonials">Avaliações</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+           <div id="form-content">
+                    <form class="newsletter-form">
+                        <label for="email" class="mb-1">Fique por dentro das novidades do Solamigo!</label>
+                        <input type="text" name="email" id="email" class="mb-1" placeholder="Digite o seu e-mail">
+                        <button class="btn-default2">Quero Receber</button>
+                    </form>
+                </div>
+            </div>
+        </footer>
+    
+    <script src="./js/script.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="interacao/script.js"></script>
+    <script src="./js/sacola.js"></script>
+    <script src="./js/valida-sacola.js"></script>
+    <script src="./js/paginacao.js"></script>
+
+    </body>
+</html>
