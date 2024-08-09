@@ -30,19 +30,9 @@ body {
 
 .formulario {
     width: 80%;
-    height: auto;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    
-}
-
-.formulario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10%;
-    margin-top: 5%;
-    
+    margin: 5% auto;
 }
 
 .form-image {
@@ -53,13 +43,11 @@ body {
     background-color: #fde3a7d7;
     padding: 1rem;
     background-size: contain;
-    height: 100vh;
-    
+    height: auto;
 }
 
-
 .form-image img {
-    width: 31rem;
+    width: 25rem;
     border-radius: 50%;
     border: 4px solid #81B3C8;
 }
@@ -72,17 +60,16 @@ body {
     align-items: center;
     background-color: #fff;
     padding: 3rem;
-    height: 100vh;
-    
-  
 }
 
-.formulario__container {
-    margin: 3em 0;
-    text-align: center;
+.formulario__campos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.formulario__campo{
+.formulario__campo {
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
@@ -103,15 +90,13 @@ body {
     line-height: 34px;
 }
 
-
 .form-header h2::after {
     content: '';
     display: block;
     width: 5rem;
     height: 0.3rem;
     background-color: #81B3C8;
-    margin: 0 auto;
-    position: absolute;
+    margin: 1 auto;
     border-radius: 10px;
 }
 
@@ -127,11 +112,6 @@ body {
     width: 100%;
     padding: 1em;
     margin-top: .5em;
-
-}
-
-.campo__escrita--menor {
-    width: 50%;
 }
 
 .termos__texto {
@@ -156,7 +136,7 @@ body {
 
 .formulario__botao:hover {
     background: var(--button-linear);
-  }
+}
 
 .mensagem-erro {
     color: red;
@@ -165,3 +145,4 @@ body {
 .campo__escrita--erro {
     border: 2px solid red;
 }
+
