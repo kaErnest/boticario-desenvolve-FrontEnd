@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3 class="product-title">${kit.titulo}</h3>
                         
                         <span class="product-description">
-                            ${products.map(product => `1 ${product.nome}: ${product.descricao}`).join('<br>')}
+                            ${products.map(product => `${product} 1 ${product.nome}: ${product.descricao}`).join('<br>')}
                         </span>
     
                         <div class="product-rate">
