@@ -1,116 +1,118 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+document.addEventListener('DOMContentLoaded', function () {
+    let cart = [];
 
-    // Funções para renderizar e atualizar os itens do carrinho (desktop e mobile)
-    function renderCartItems() {
-        const cartItemsList = document.getElementById('cart-items');
-        cartItemsList.innerHTML = '';
-        if (cartItems.length === 0) {
-            cartItemsList.innerHTML = '<li>Seu carrinho está vazio</li>';
-            return;
+    const cartButton = document.getElementById('cart-button');
+    const cartModal = document.getElementById('cart-modal');
+    const closeCart = document.getElementById('close-cart');
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const totalPriceElement = document.getElementById('total-price');
+
+    const mobileCartButton = document.getElementById('mobile-cart-button');
+    const mobileCartModal = document.getElementById('mobile-cart-modal');
+    const closeMobileCart = document.getElementById('close-mobile-cart');
+    const mobileCartItems = document.getElementById('mobile-cart-items');
+    const mobileCartCount = document.getElementById('mobile-cart-count');
+    const mobileTotalPriceElement = document.getElementById('mobile-total-price');
+
+    cartButton.onclick = function () {
+        cartModal.style.display = 'block';
+        renderCartItems();
+    };
+
+    closeCart.onclick = function () {
+        cartModal.style.display = 'none';
+    };
+
+    mobileCartButton.onclick = function () {
+        mobileCartModal.style.display = 'block';
+        renderMobileCartItems();
+    };
+
+    closeMobileCart.onclick = function () {
+        mobileCartModal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target === cartModal) {
+            cartModal.style.display = 'none';
         }
+        if (event.target === mobileCartModal) {
+            mobileCartModal.style.display = 'none';
+        }
+    };
 
-        cartItems.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('cart-item');
-            listItem.innerHTML = `
-                <span>${item.name} (x${item.quantity}) - R$${(item.price * item.quantity).toFixed(2)}</span>
-                <button class="remove-item">Remover</button>
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const name = this.getAttribute('data-name');
+            const price = parseFloat(this.getAttribute('data-price'));
+            addItemToCart({ name, price });
+        });
+    });
+
+    function addItemToCart(item) {
+        cart.push(item);
+        updateCartCount();
+        renderCartItems();
+        renderMobileCartItems();
+    }
+
+    function removeItemFromCart(index) {
+        cart.splice(index, 1);
+        updateCartCount();
+        renderCartItems();
+        renderMobileCartItems();
+    }
+
+    function updateCartCount() {
+        cartCount.textContent = cart.length;
+        mobileCartCount.textContent = cart.length;
+    }
+
+    function renderCartItems() {
+        cartItems.innerHTML = '';
+        let totalPrice = 0;
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.classList.add('cart-item');
+            li.innerHTML = `
+                ${item.name} - R$${item.price.toFixed(2)}
+                <button class="remove-item" data-index="${index}">Remover</button>
             `;
-            listItem.querySelector('.remove-item').addEventListener('click', () => removeItemFromCart(item.name));
-            cartItemsList.appendChild(listItem);
+            cartItems.appendChild(li);
+            totalPrice += item.price;
+        });
+        totalPriceElement.textContent = totalPrice.toFixed(2);
+
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function () {
+                const index = this.getAttribute('data-index');
+                removeItemFromCart(index);
+            });
         });
     }
 
     function renderMobileCartItems() {
-        const mobileCartItemsList = document.getElementById('mobile-cart-items');
-        mobileCartItemsList.innerHTML = '';
-        if (cartItems.length === 0) {
-            mobileCartItemsList.innerHTML = '<li>Seu carrinho está vazio</li>';
-            return;
-        }
-
-        cartItems.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('cart-item');
-            listItem.innerHTML = `
-                <span>${item.name} (x${item.quantity}) - R$${(item.price * item.quantity).toFixed(2)}</span>
-                <button class="remove-item">Remover</button>
+        mobileCartItems.innerHTML = '';
+        let totalPrice = 0;
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.classList.add('cart-item');
+            li.innerHTML = `
+                ${item.name} - R$${item.price.toFixed(2)}
+                <button class="remove-item" data-index="${index}">Remover</button>
             `;
-            listItem.querySelector('.remove-item').addEventListener('click', () => removeItemFromCart(item.name));
-            mobileCartItemsList.appendChild(listItem);
+            mobileCartItems.appendChild(li);
+            totalPrice += item.price;
+        });
+        mobileTotalPriceElement.textContent = totalPrice.toFixed(2);
+
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function () {
+                const index = this.getAttribute('data-index');
+                removeItemFromCart(index);
+            });
         });
     }
-
-    // Funções para adicionar e remover itens do carrinho
-    function addItemToCart(cartItem) {
-        cartItems.push(cartItem);
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        renderCartItems();
-        renderMobileCartItems();
-        updateCartTotal();
-    }
-
-    function removeItemFromCart(itemName) {
-        cartItems = cartItems.filter(cartItem => cartItem.name !== itemName);
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        renderCartItems();
-        renderMobileCartItems();
-        updateCartTotal();
-    }
-
-    // Funções para atualizar o total do carrinho (desktop e mobile)
-    function updateCartTotal() {
-        let total = 0;
-        cartItems.forEach(item => total += item.price * item.quantity);
-        document.getElementById('total-price').textContent = total.toFixed(2);
-        document.getElementById('mobile-total-price').textContent = total.toFixed(2);
-        document.getElementById('cart-count').textContent = cartItems.length;
-        document.getElementById('mobile-cart-count').textContent = cartItems.length;
-    }
-
-    // Funções para gerenciar o modal do carrinho (desktop e mobile)
-    function setupCartModal(buttonId, modalId, closeId, checkoutId) {
-        const cartButton = document.getElementById(buttonId);
-        const cartModal = document.getElementById(modalId);
-        const closeCartButton = document.getElementById(closeId);
-        const checkoutButton = document.getElementById(checkoutId);
-
-        cartButton.addEventListener('click', () => {
-            renderCartItems();
-            renderMobileCartItems();
-            cartModal.style.display = 'block';
-        });
-
-        closeCartButton.addEventListener('click', () => {
-            cartModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === cartModal) {
-                cartModal.style.display = 'none';
-            }
-        });
-
-        checkoutButton.addEventListener('click', () => {
-            if (cartItems.length === 0) {
-                alert('Seu carrinho está vazio!');
-            } else {
-                alert('Compra finalizada com sucesso!');
-                cartItems = [];
-                localStorage.removeItem('cartItems');
-                renderCartItems();
-                renderMobileCartItems();
-                updateCartTotal();
-                cartModal.style.display = 'none';
-            }
-        });
-    }
-
-    // Configuração dos modais do carrinho (desktop e mobile)
-    setupCartModal('cart-button', 'cart-modal', 'close-cart', 'checkout-button');
-    setupCartModal('mobile-cart-button', 'mobile-cart-modal', 'close-mobile-cart', 'mobile-checkout-button');
-
-    // Inicializa o total do carrinho ao carregar a página
-    updateCartTotal();
 });
