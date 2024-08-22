@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
 
     function showPage(page) {
+        if (page > totalPages) {
+            return; // Não muda para uma página que não existe
+        }
+
         products.forEach((product, index) => {
             product.style.display = (index >= (page - 1) * productsPerPage && index < page * productsPerPage) ? 'flex' : 'none';
         });

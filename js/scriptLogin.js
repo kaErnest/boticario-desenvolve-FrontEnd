@@ -11,7 +11,7 @@ formulario.addEventListener("submit", (e) => {
 
     if (validaLogin(listaRespostas.email, listaRespostas.senha)) {
         localStorage.setItem("login", JSON.stringify(listaRespostas)); 
-        window.location.href = "./minhaConta.html";
+        window.location.href = "./index.html";
     } else {
         alert("E-mail ou senha inválidos");
     }
