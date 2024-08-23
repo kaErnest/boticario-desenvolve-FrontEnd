@@ -65,8 +65,9 @@ Inicie o servidor backend e a aplicação frontend:
 - No diretório frontend: open ~/boticario-desenvolve/frontend/index.html
 
 🤝 Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou sugerir melhorias.
+<br>Contribuições são bem-vindas! 
+<br>Sinta-se à vontade para enviar pull requests ou sugerir melhorias.
 
 ✍️ Autor
-Karoline Ernest
-Desenvolvedora Full Stack
+<br>Karoline Ernest
+<br>Desenvolvedora Full Stack
